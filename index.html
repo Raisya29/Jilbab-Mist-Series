@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jilbab Segiempat Mist Series | Besbrand Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pink-lembut': '#ffb3ba',
+                        'lavender': '#e6e6fa',
+                        'mint-pastel': '#b3ffb3',
+                        'peach': '#ffdab9',
+                        'putih': '#ffffff',
+                    },
+                    fontFamily: {
+                        'heading': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in': 'slideIn 0.5s ease-out forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        slideIn: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255, 179, 186, 0.8) 0%, rgba(230, 230, 250, 0.8) 50%, rgba(179, 255, 179, 0.8) 100%);
+        }
+        
+        .price-card {
+            transition: all 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .notification-slide {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        .notification-exit {
+            animation: slideOut 0.5s ease-in forwards;
+        }
+        
+        @keyframes slideOut {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .product-gallery img {
+            transition: transform 0.3s ease;
+        }
+        
+        .product-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .color-option {
+            transition: all 0.2s ease;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        
+        .color-option.active {
+            border: 3px solid #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .order-form-container {
+            background: linear-gradient(135deg, rgba(255, 179, 186, 0.2) 0%, rgba(230, 230, 250, 0.2) 50%, rgba(179, 255, 179, 0.2) 100%);
+        }
+        
+        .countdown-box {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-body bg-lavender text-gray-800">
+    <!-- Notification System -->
+    <div id="notification-container" class="fixed top-4 right-4 z-50 w-80 max-w-full"></div>
+    
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta hidden" id="sticky-cta">
+        <button onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})" class="bg-pink-lembut hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 flex items-center">
+            <i class="fas fa-shopping-cart mr-2"></i> PESAN SEKARANG
+        </button>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0o-mbdema3vbwbj62.webp" alt="Jilbab Mist Series" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 py-20">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-heading font-bold text-white mb-4">
+                    Percantik Tampilan Anda dengan <span class="text-pink-lembut">Jilbab Segiempat Mist Series</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8">
+                    Pinggiran Lasercut yang stylish dan nyaman dipakai untuk menambah aura kecantikan Anda
+                </p>
+                
+                <div class="glassmorphism rounded-2xl p-6 mb-8 inline-block">
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-truck text-peach text-2xl mr-2"></i>
+                            <span class="text-white">Gratis Ongkir</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-mint-pastel text-2xl mr-2"></i>
+                            <span class="text-white">Garansi 7 Hari</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-undo text-lavender text-2xl mr-2"></i>
+                            <span class="text-white">Pengembalian Mudah</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                    <button onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})" class="bg-pink-lembut hover:bg-opacity-90 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                        PESAN SEKARANG - Rp 165.000
+                    </button>
+                    <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="bg-white hover:bg-gray-100 text-pink-lembut font-bold py-4 px-8 rounded-full text-xl shadow-lg transform transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-info-circle mr-2"></i> LIHAT DETAIL
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-4 left-0 right-0 text-center">
+            <a href="#features" class="text-white animate-bounce">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Product Showcase -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Keunggulan Jilbab Mist Series</h2>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="product-gallery grid grid-cols-2 gap-4">
+                    <div class="col-span-2">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0o-mbdema3vbwbj62.webp" alt="Jilbab Mist Series" class="w-full h-80 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0j-mbdexpxvuae672.webp" alt="Jilbab Mist Series" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                    </div>
+                    <div>
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0u-mbdema3uz97jfa.webp" alt="Jilbab Mist Series" class="w-full h-40 object-cover rounded-xl shadow-lg">
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-heading font-bold mb-4">Desain Premium</h3>
+                        <p class="text-gray-700 mb-4">
+                            Percantik tampilan Anda dengan Jilbab "Segiempat Mist Series" dengan Pinggiran Lasercut yang stylish dan nyaman dipakai. Sesuaikan dengan acara yang sedang Anda hadiri agar tampak makin mempesona dan menambah aura kecantikan Anda.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 rounded-xl bg-lavender">
+                            <div class="feature-icon mx-auto mb-3 text-pink-lembut text-3xl">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Bahan Voal Premium</h4>
+                            <p class="text-sm">Sangat lembut dan nyaman dipakai</p>
+                        </div>
+                        
+                        <div class="text-center p-4 rounded-xl bg-peach">
+                            <div class="feature-icon mx-auto mb-3 text-pink-lembut text-3xl">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Anti Kusut</h4>
+                            <p class="text-sm">Cocok untuk segala kegiatan</p>
+                        </div>
+                        
+                        <div class="text-center p-4 rounded-xl bg-mint-pastel">
+                            <div class="feature-icon mx-auto mb-3 text-pink-lembut text-3xl">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Pinggiran Lasercut</h4>
+                            <p class="text-sm">Desain eksklusif dan stylish</p>
+                        </div>
+                        
+                        <div class="text-center p-4 rounded-xl bg-pink-lembut">
+                            <div class="feature-icon mx-auto mb-3 text-white text-3xl">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Dua Ukuran</h4>
+                            <p class="text-sm">Standar dan Syar'i</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Demo -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-heading font-bold mb-6">Lihat Video Demo</h3>
+                <div class="max-w-4xl mx-auto">
+                    <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
+                        <video controls poster="https://down-id.img.susercontent.com/file/id-11134207-7ra0o-mbdema3vbwbj62.webp" class="w-full">
+                            <source src="https://down-zl-sg.vod.susercontent.com/api/v4/11110105/mms/id-11110105-6kou8-mbdeyk8vhrdi0b.16005581752423111.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Color Options -->
+    <section class="py-16 bg-lavender">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Pilihan Warna Eksklusif</h2>
+                <p class="text-xl">Pilih warna favorit Anda yang sesuai dengan gaya dan kepribadian</p>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer active" style="background-color: #f8c6c7;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mbdexpxvx3j217@resize_w900_nl.webp" alt="Blush Pink" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Blush Pink</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer" style="background-color: #333;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0n-mbdexpxvyi3ie0@resize_w900_nl.webp" alt="Black" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Black</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer" style="background-color: #d4b4cc;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0o-mbdexpxvzwny36@resize_w900_nl.webp" alt="Mauve" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Mauve</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer" style="background-color: #b2c9b2;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0h-mbdexpxw1b8ec6@resize_w900_nl.webp" alt="Sage" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Sage</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer" style="background-color: #1a237e;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mbdexpxw2psu8c@resize_w900_nl.webp" alt="Navy" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Navy</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="color-option w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer" style="background-color: #4a6fa5;">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7ra0k-mbdexpxw44da46@resize_w900_nl.webp" alt="Denim" class="w-full h-full object-cover">
+                    </div>
+                    <p class="mt-3 font-bold">Denim</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Pilih Ukuran & Dapatkan Promo</h2>
+                <p class="text-xl">Harga spesial untuk pembelian hari ini</p>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <!-- Countdown Timer -->
+                <div class="glassmorphism rounded-xl p-6 mb-12 text-center">
+                    <h3 class="text-xl font-bold mb-2">PROMO BERAKHIR DALAM:</h3>
+                    <div id="countdown" class="flex justify-center gap-4">
+                        <div class="countdown-box bg-pink-lembut text-white rounded-lg p-3 w-20">
+                            <div class="text-2xl font-bold" id="hours">12</div>
+                            <div class="text-sm">Jam</div>
+                        </div>
+                        <div class="countdown-box bg-pink-lembut text-white rounded-lg p-3 w-20">
+                            <div class="text-2xl font-bold" id="minutes">45</div>
+                            <div class="text-sm">Menit</div>
+                        </div>
+                        <div class="countdown-box bg-pink-lembut text-white rounded-lg p-3 w-20">
+                            <div class="text-2xl font-bold" id="seconds">30</div>
+                            <div class="text-sm">Detik</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pricing Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="price-card bg-gradient-to-br from-lavender to-putih rounded-2xl shadow-xl overflow-hidden">
+                        <div class="bg-pink-lembut text-white text-center py-4">
+                            <h3 class="text-2xl font-heading font-bold">UKURAN STANDAR</h3>
+                            <p class="text-sm">110 x 110 cm (toleransi lasercut +/- 2cm)</p>
+                        </div>
+                        <div class="p-8 text-center">
+                            <div class="flex justify-center items-baseline mb-4">
+                                <span class="text-4xl font-bold text-pink-lembut">Rp 165.000</span>
+                            </div>
+                            <div class="text-gray-500 line-through mb-6">Rp 175.000</div>
+                            <button onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})" class="bg-pink-lembut hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full w-full transition-all duration-300">
+                                PESAN SEKARANG
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="price-card bg-gradient-to-br from-mint-pastel to-putih rounded-2xl shadow-xl overflow-hidden">
+                        <div class="bg-pink-lembut text-white text-center py-4">
+                            <h3 class="text-2xl font-heading font-bold">UKURAN SYAR'I</h3>
+                            <p class="text-sm">130 x 130 cm (toleransi lasercut +/- 2cm)</p>
+                        </div>
+                        <div class="p-8 text-center">
+                            <div class="flex justify-center items-baseline mb-4">
+                                <span class="text-4xl font-bold text-pink-lembut">Rp 199.000</span>
+                            </div>
+                            <div class="text-gray-500 line-through mb-6">Rp 215.000</div>
+                            <button onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})" class="bg-pink-lembut hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full w-full transition-all duration-300">
+                                PESAN SEKARANG
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="mt-12 flex flex-wrap justify-center gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-lembut rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                        </div>
+                        <p>Gratis Ongkir</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-lembut rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <p>Garansi 7 Hari</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-lembut rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-credit-card text-white text-2xl"></i>
+                        </div>
+                        <p>Pembayaran Aman</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-pink-lembut rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-box-open text-white text-2xl"></i>
+                        </div>
+                        <p>Original Product</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="py-16 bg-lavender">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Apa Kata Pelanggan Kami?</h2>
+                <div class="flex justify-center mb-4">
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                    <i class="fas fa-star text-yellow-400 text-2xl"></i>
+                </div>
+                <p class="text-xl">Rata-rata rating 4.9 dari 1.200+ ulasan</p>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto mt-4"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="testimonial-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-3">
+                            <img src="https://i.pinimg.com/736x/1d/b3/8e/1db38ecaccbf2227b51eb178e8627a20.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Delia Rahayu</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Jilbab Mist Series ini sangat nyaman dipakai seharian. Bahannya adem dan tidak mudah kusut. Pinggiran lasercutnya bikin tampilan jadi lebih stylish!"
+                    </p>
+                </div>
+                
+                <div class="testimonial-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-3">
+                            <img src="https://i.pinimg.com/736x/0e/7c/bb/0e7cbb46674d12bb9729a9abbf2403ff.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dewi Anggraeni</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Saya sudah mencoba banyak jilbab, tapi Mist Series ini yang paling nyaman. Ukuran syar'inya pas banget dan warnanya tidak luntur meski sudah beberapa kali dicuci."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-3">
+                            <img src="https://i.pinimg.com/736x/5d/cf/e4/5dcfe4b6f7079c034739a0225d9533a4.jpg" alt="Customer" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Luna Dahlia</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Pengiriman cepat dan packing rapi. Saya beli warna blush pink dan navy, keduanya sangat cantik. Sekarang jadi jilbab favorit saya untuk acara formal maupun sehari-hari."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Form -->
+    <section id="order-form" class="py-16 order-form-container">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Pesan Sekarang Juga!</h2>
+                <p class="text-xl">Isi formulir pemesanan di bawah ini</p>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto mt-4"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto glassmorphism rounded-2xl p-6 md:p-8">
+                <!-- OrderOnline Embed Code -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="vera" data-product-slug="jilbab-segiempat-mist-series" data-product-id="687a35191c495d2e520ca985" id="oo-embed-form-jilbab-segiempat-mist-series-8485" data-origin="orderonline">
+                        <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                    </form>
+                </div>
+                <script>
+                    if (typeof xLogError != 'function') {
+                        var xLogError = function (error) {
+                            var req = new XMLHttpRequest();
+                            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                            req.open('POST', 'https://api.orderonline.id/log', true);
+                            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            req.send(params);
+                        };
+                    }
+                    try {
+                        if (typeof xEmbedScript != 'function') {
+                            var xEmbedScript = function () {
+                                !function(w, d, e, v, id, t, s) {
+                                    if (d.getElementById(id)) return;
+                                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                    s = d.getElementsByTagName(e)[0];
+                                    s.parentNode.insertBefore(t, s);
+                                }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                            };
+                        }
+                        if (typeof xEmbedInit != 'function') {
+                            var xEmbedInit = function (w, n) {
+                                if (w.ooe) return;
+                                n = w.ooe = function() {
+                                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                                };
+                                if (!w._ooe) w._ooe = n;
+                                n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                            };
+                        }
+                        xEmbedInit(window);
+                        ooe('setup', 'redirect', 'https://vera.orderonline.id');
+                        ooe('init', '5f1a7807a9bf807d6c63d963', '687a35191c495d2e520ca985', '687a35191c495d2e520ca986', 'oo-embed-form-jilbab-segiempat-mist-series-8485', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":true});
+                        if (!window.jQuery) {
+                            !function(w, d, e, v, id, t, s) {
+                                if (d.getElementById(id)) return;
+                                t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                                t.addEventListener('load', xEmbedScript);
+                                s = d.getElementsByTagName(e)[0];
+                                s.parentNode.insertBefore(t, s);
+                            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+                        } else {
+                            xEmbedScript();
+                        }
+                    } catch (e) {
+                        xLogError(e);
+                        throw e;
+                    }
+                </script>
+                <!-- End OrderOnline Embed Code -->
+            </div>
+            
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Pertanyaan Umum</h2>
+                <div class="w-24 h-1 bg-pink-lembut mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6">
+                    <div class="flex justify-between items-center bg-lavender p-4 rounded-t-lg cursor-pointer">
+                        <h3 class="font-bold">Apakah bahan jilbab ini panas?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-b-lg hidden">
+                        <p>Tidak, bahan voal premium yang digunakan pada Mist Series sangat ringan dan adem, sehingga nyaman dipakai di cuaca panas sekalipun.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between items-center bg-lavender p-4 rounded-t-lg cursor-pointer">
+                        <h3 class="font-bold">Berapa lama waktu pengiriman?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-b-lg hidden">
+                        <p>Pengiriman biasanya memakan waktu 2-4 hari kerja untuk wilayah Jawa dan 3-7 hari kerja untuk luar Jawa, tergantung lokasi Anda.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between items-center bg-lavender p-4 rounded-t-lg cursor-pointer">
+                        <h3 class="font-bold">Apakah tersedia ukuran lain?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-b-lg hidden">
+                        <p>Saat ini kami hanya menyediakan dua ukuran: Standar (110x110 cm) dan Syar'i (130x130 cm). Kedua ukuran ini sudah mencakup kebutuhan berbagai bentuk wajah dan gaya berhijab.</p>
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex justify-between items-center bg-lavender p-4 rounded-t-lg cursor-pointer">
+                        <h3 class="font-bold">Bagaimana cara perawatannya?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-b-lg hidden">
+                        <p>Jilbab Mist Series sangat mudah dirawat. Cuci dengan tangan atau mesin cuci dengan mode lembut. Gunakan detergen lembut dan hindari pemutih. Setrika dengan suhu rendah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-4">Besbrand Shop</h3>
+                    <p class="mb-4">Menjual produk hijab berkualitas premium dengan desain terkini dan bahan terbaik.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-white hover:text-pink-lembut"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-pink-lembut"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-pink-lembut"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="#" class="text-white hover:text-pink-lembut"><i class="fab fa-whatsapp text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Produk</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Jilbab Segiempat</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Jilbab Instan</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Jilbab Pashmina</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Aksesoris Hijab</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Bantuan</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Cara Pemesanan</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Pengembalian</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Kebijakan Privasi</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-pink-lembut">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak Kami</h3>
+                    <ul>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-pink-lembut"></i>
+                            <span>Jl. Kemang Raya No. 12, Jakarta Selatan</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-pink-lembut"></i>
+                            <span>+62 8953 8406 0107</span>
+                        </li>
+                        <li class="mb-2 flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-pink-lembut"></i>
+                            <span>cs@besbrandshop.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Besbrand Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Sticky CTA Button
+        window.addEventListener('scroll', function() {
+            const stickyCta = document.getElementById('sticky-cta');
+            if (window.scrollY > 300) {
+                stickyCta.classList.remove('hidden');
+            } else {
+                stickyCta.classList.add('hidden');
+            }
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+            
+            let hours = parseInt(hoursElement.textContent);
+            let minutes = parseInt(minutesElement.textContent);
+            let seconds = parseInt(secondsElement.textContent);
+            
+            seconds--;
+            
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    
+                    if (hours < 0) {
+                        hours = 0;
+                        minutes = 0;
+                        seconds = 0;
+                    }
+                }
+            }
+            
+            hoursElement.textContent = hours.toString().padStart(2, '0');
+            minutesElement.textContent = minutes.toString().padStart(2, '0');
+            secondsElement.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        
+        // Color Selection
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.bg-lavender').forEach(item => {
+            item.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+        });
+        
+        // Customer Notifications
+        const customers = [
+            {name: "Vina", city: "Jakarta"},
+            {name: "Dina", city: "Surabaya"},
+            {name: "Kartika", city: "Bandung"},
+            {name: "Lestari", city: "Medan"},
+            {name: "Putri", city: "Bekasi"},
+            {name: "Maya Sari", city: "Tangerang"},
+            {name: "Rani", city: "Depok"},
+            {name: "Permata", city: "Semarang"},
+            {name: "Lestari F", city: "Jakarta"}
+        ];
+        
+        function showNotification() {
+            const randomIndex = Math.floor(Math.random() * customers.length);
+            const customer = customers[randomIndex];
+            
+            const notification = document.createElement('div');
+            notification.className = 'notification-slide bg-white rounded-lg shadow-lg p-4 mb-4 flex items-start';
+            notification.innerHTML = `
+                <div class="mr-3">
+                    <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-200">
+                        <div class="w-10 h-10 rounded-full bg-pink-lembut flex items-center justify-center text-white">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-bold">${customer.name} dari ${customer.city}</p>
+                    <p class="text-sm">baru saja memesan Jilbab Segiempat Mist Series</p>
+                    <p class="text-xs text-gray-500 mt-1">${new Date().toLocaleTimeString()}</p>
+                </div>
+                <button class="ml-2 text-gray-500 hover:text-gray-700" onclick="this.parentElement.classList.add('notification-exit'); setTimeout(() => this.parentElement.remove(), 500)">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            
+            document.getElementById('notification-container').prepend(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                notification.classList.add('notification-exit');
+                setTimeout(() => notification.remove(), 500);
+            }, 5000);
+        }
+        
+        // Show first notification after 3 seconds, then every 8 seconds
+        setTimeout(() => {
+            showNotification();
+            setInterval(showNotification, 8000);
+        }, 3000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
